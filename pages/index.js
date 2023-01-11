@@ -16,7 +16,7 @@ const Home = () => {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
     
-    console.log("Calling OpenAI...")
+//    console.log("Calling OpenAI...")
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -27,7 +27,7 @@ const Home = () => {
   
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text)
+//    console.log("OpenAI replied...", output.text)
   
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
@@ -44,7 +44,7 @@ const Home = () => {
             <h1>Awesome story generator</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Just enter the title of you story and we'll go from there...</h2>
+            <h2>Just enter the title of your story and we'll go from there...</h2>
           </div>
         </div>
         <div className="promt-container">

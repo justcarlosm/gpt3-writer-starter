@@ -6,7 +6,12 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = "";
+const basePromptPrefix =
+`
+Write me a short story in the style of Neil Richard Gaiman with the title below. Please make sure the story goes in-depth on the topic and shows that the writer did their research.
+
+Title:
+`;
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
